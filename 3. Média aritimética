@@ -1,0 +1,14 @@
+public class Main {
+    public static void main(String[] args) {
+
+        double a = 10;
+        double b = 10;
+        double c = 10;
+        double nota = a + b + c;
+        double notaf = nota / 3;
+
+        System.out.println("O resultado da nota é: " +notaf);
+
+
+    }
+}
