@@ -1,0 +1,10 @@
+public class Main {
+    public static void main(String[] args) {
+
+        double celcius = 21;
+        double Fahrenheit = (celcius * 9/5)+32;
+
+        System.out.println("a temperatura em Fahrenheit é :" + Fahrenheit );
+
+    }
+}
