@@ -1,0 +1,19 @@
+public class Main {
+    public static void main(String[] args) {
+        String nome = "Matheus";
+        int contadorVogais = 0;
+
+        // Laço de repetição para percorrer cada caractere do nome
+        for (int i = 0; i < nome.length(); i++) {
+            char letra = Character.toLowerCase(nome.charAt(i)); // Converter para minúscula
+
+            // Estrutura condicional para verificar vogais
+            if (letra == 'a' || letra == 'e' || letra == 'i' ||
+                    letra == 'o' || letra == 'u') {
+                contadorVogais++;
+            }
+        }
+
+        System.out.println(+ contadorVogais );
+    }
+}
