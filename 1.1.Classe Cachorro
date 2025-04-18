@@ -1,7 +1,0 @@
-//Peguei do Chat gpt pq nao sabia de onde começar
-public class Main {
-    public static void main(String[] args) {
-        Cachorro meuCachorro = new Cachorro("Rex", "Labrador", 3);
-        meuCachorro.latir();
-    }
-}
