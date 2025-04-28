@@ -1,0 +1,74 @@
+// Classe principal que contém o método main para testar a ContaBancaria
+public class TestaContaBancaria {
+    public static void main(String[] args) {
+        // Criando uma nova conta bancária com número "12345-6"
+        ContaBancaria minhaConta = new ContaBancaria("12345-6");
+
+        // Realizando operações na conta
+        System.out.println("Saldo inicial: R$" + minhaConta.getSaldo());
+
+        // Depositando R$1000.00
+        minhaConta.depositar(1000.00);
+        System.out.println("Depósito de R$1000.00 realizado.");
+        System.out.println("Saldo atual: R$" + minhaConta.getSaldo());
+
+        // Sacando R$350.50
+        boolean saqueRealizado = minhaConta.sacar(350.50);
+        if (saqueRealizado) {
+            System.out.println("Saque de R$350.50 realizado com sucesso.");
+        } else {
+            System.out.println("Saldo insuficiente para saque de R$350.50.");
+        }
+        System.out.println("Saldo atual: R$" + minhaConta.getSaldo());
+
+        // Tentando sacar R$1000.00 (valor maior que o saldo)
+        saqueRealizado = minhaConta.sacar(1000.00);
+        if (saqueRealizado) {
+            System.out.println("Saque de R$1000.00 realizado com sucesso.");
+        } else {
+            System.out.println("Saldo insuficiente para saque de R$1000.00.");
+        }
+        System.out.println("Saldo final: R$" + minhaConta.getSaldo());
+    }
+}
+
+// Classe que representa uma conta bancária
+class ContaBancaria {
+    // Atributos da classe
+    private String numeroConta;  // Número da conta (ex: "12345-6")
+    private double saldo;        // Saldo atual da conta
+
+    // Construtor da classe
+    public ContaBancaria(String numeroConta) {
+        this.numeroConta = numeroConta;  // Inicializa o número da conta
+        this.saldo = 0.0;                // Inicializa o saldo com zero
+    }
+
+    // Método para depositar dinheiro na conta
+    public void depositar(double valor) {
+        if (valor > 0) {  // Verifica se o valor é positivo
+            saldo += valor;
+        } else {
+            System.out.println("Valor de depósito inválido.");
+        }
+    }
+
+    // Método para sacar dinheiro da conta
+    public boolean sacar(double valor) {
+        if (valor > 0 && saldo >= valor) {  // Verifica se há saldo suficiente
+            saldo -= valor;
+            return true;  // Saque realizado com sucesso
+        }
+        return false;  // Saldo insuficiente ou valor inválido
+    }
+
+    // Método para obter o saldo atual (getter)
+    public double getSaldo() {
+        return saldo;
+    }
+
+    // Método para obter o número da conta (getter)
+    public String getNumeroConta() {
+        return numeroConta;
+    }
+}
